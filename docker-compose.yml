@@ -9,4 +9,3 @@ services:
     ports:
       - 9705:9705
     read_only: true
-    pids_limit: 5
