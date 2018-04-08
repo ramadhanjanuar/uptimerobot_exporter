@@ -64,8 +64,8 @@ if __name__ == '__main__':
             help='Your uptimerobot.com API key. See account details.'
         )
         parser.add_argument(
-            '--server_name', '-s', 
-            default='0.0.0.0', 
+            '--server_name', '-s',
+            default='0.0.0.0',
             help='Server address to bind to.'
         )
         parser.add_argument(
@@ -78,6 +78,6 @@ if __name__ == '__main__':
         api_key = args.apikey
         server_name = args.server_name
         server_port = args.server_port
-    
+
     httpd = http.server.HTTPServer((server_name, server_port), ReqHandler)
     httpd.serve_forever()
