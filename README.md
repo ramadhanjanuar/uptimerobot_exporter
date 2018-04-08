@@ -46,7 +46,7 @@ Example compose file:
         image: hnrd/uptimerobot_exporter
         restart: unless-stopped
         environment:
-          UPTIME_ROBOT_APIKEY: u123456-1a2b3c4d5e6f7890abc12323
+          UPTIMEROBOT_API_KEY: u123456-1a2b3c4d5e6f7890abc12323
         ports:
           - 9705:9705
         read_only: true
