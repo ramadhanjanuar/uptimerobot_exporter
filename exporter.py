@@ -29,12 +29,13 @@ def format_prometheus(data):
             item.get('url'),
             1 if item.get('status', 0) == 2 else 0,
         )
-        result += 'uptimerobot_response_time{{name="{}",type="{}",url="{}"}} {}\n'.format(
-            item.get('friendly_name'),
-            item.get('type'),
-            item.get('url'),
-            item.get('response_times').pop().get('value'),
-        )
+        if item.get('status', 0) == 2:
+            result += 'uptimerobot_response_time{{name="{}",type="{}",url="{}"}} {}\n'.format(
+                item.get('friendly_name'),
+                item.get('type'),
+                item.get('url'),
+                item.get('response_times').pop().get('value'),
+            )
     return result
 
 
